@@ -1,0 +1,64 @@
+name: Bug
+description: File a bug report
+title: "[bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bug report notice.
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Trivial
+        - Minor
+        - Major
+        - Critical
+        - Blocker
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Enter one or more versions separated by commas.
+    validations:
+      required: true
+  - type: input
+    id: components
+    attributes:
+      label: Components/Modules
+      description: Enter one or more components or modules separated by commas.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Operating Environment
+      description: OS,  Disribution, Version, etc.
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Frequency of Occurrence
+      options:
+        - "Never"
+        - "One Time"
+        - "Occasional"
+        - "Frequent"
+        - "Constant"
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue Description
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
